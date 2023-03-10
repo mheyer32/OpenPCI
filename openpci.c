@@ -24,14 +24,15 @@ struct ExecBase *SysBase;
 BPTR SegList;
 struct Library *UtilityBase = NULL;
 struct DosLibrary  *DOSBase = NULL;
-struct Library   *ExpansionBase = NULL;
 
-#ifdef __SASC
+#if defined(__SASC) || defined(__GNUC__)
 	struct LocaleBase *LocaleBase = 0;
 	struct Device *TimerBase = 0;
+    struct ExpansionBase   *ExpansionBase = NULL;
 #else
 	struct Library *LocaleBase = 0;
 	struct Library *TimerBase = 0;
+    struct Library *ExpansionBase = NULL;
 #endif
 
 struct OpenPciLib *OpenPciBase;
@@ -180,7 +181,7 @@ struct OpenPciLib * __saveds ASM LIB_Init(REG(d0, struct OpenPciLib *LibBase),
 			68k version doesn't support Pegasos 
 			Pegasos users must use openpci.library.elf		
 		*/
-#ifdef __SASC
+#if defined(__SASC) || defined(_AMIGAOS3_)
 		if(OpenPciBase->bus&PegasosBus)
 		{
 			LibCleanup(LibBase);
@@ -372,3 +373,10 @@ void __regargs __chkabort(void) { }  /* a shared library cannot be    */
 void __regargs _CXBRK(void)     { }  /* CTRL-C aborted when doing I/O */
 
 #endif /* __SASC */
+
+#if defined(__libnix__)
+int __nocommandline = 1;
+int __initlibraries = 0;
+long _WBenchMsg = 0;
+void exit(int status) {};
+#endif

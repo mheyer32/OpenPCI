@@ -1,0 +1,49 @@
+#
+# OpenPciInfo gcc makefile
+#
+
+DEB =
+#DEB = -DDEBUG
+
+# -fomit-frame-pointer is evil on m68k gcc!
+CC_68K		= m68k-amigaos-gcc
+LD_68K		= m68k-amigaos-gcc
+LCFLAGS_68K	= $(DEB) -Wall -Wno-pointer-sign -O2 -m68020-60 -mregparm=3 -noixemul -I../
+LDFLAGS_68K	= -noixemul
+LIBS_68K	= -lamiga
+
+##############################################################################
+# object files
+
+OBJS_68K	= OpenPciInfo.o68k
+HEADERS	= pcibusinfo.h debug.h
+
+##############################################################################
+# standard targets
+
+.PHONY:	all install clean
+
+all: OpenPciInfo
+
+install:
+	mkdir -p C
+	copy clone OpenPciInfo  C/
+
+clean:
+	$(RM) $(OBJS_68K)
+
+##############################################################################
+# dependencies
+
+OpenPciInfo.o68k:	pcibusinfo.h
+
+##############################################################################
+
+.SUFFIXES:
+.SUFFIXES: .c .o68K
+
+%.o68k:	%.c
+	$(CC_68K) $(LCFLAGS_68K) -c $< -o $@
+
+OpenPciInfo:     $(OBJS_68K)
+	$(LD_68K) $(LDFLAGS_68K) $^ -o $@ $(LIBS_68K)

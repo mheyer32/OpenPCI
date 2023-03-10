@@ -8,7 +8,7 @@
 
 #ifdef __GNUC__
 #include "../libraries/openpci.h"
-#include "Prometheus-3.0/include/inline/prometheus_protos.h"
+#include "Prometheus-3.0/include/inline/prometheus.h"
 #else
 #include "/libraries/openpci.h"
 #include "Prometheus-3.0/include/pragmas/prometheus_pragmas.h"

@@ -2,7 +2,7 @@
  * $Id: Ppci_set_master.c,v 1.4 2005/19/03 12:10:00 titan Exp $
  */
 
-#include "/openpcidata.h"
+#include "openpcidata.h"
 #include "PrometheusWrapper.h"
 
 BOOL PROMETHEUSpci_set_master(struct  pci_dev *dev)

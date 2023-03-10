@@ -2,8 +2,8 @@
  * $Id: PrometheusWrapper.c,v 1.8 2005/29/04 20:00:00 titan Exp $
  */
 
-#include "/openpcidata.h"
-#include "/openpci_protosWrapper.h"
+#include "openpcidata.h"
+#include "openpci_protosWrapper.h"
 #include "PrometheusWrapper.h"
 
 struct Library	*PrometheusBase = NULL;

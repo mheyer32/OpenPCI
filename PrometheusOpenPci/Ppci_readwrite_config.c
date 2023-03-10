@@ -2,7 +2,7 @@
  * $Id: Ppci_readwrite_config.c,v 1.1.1.1 2005/03/19 11:43:00 titan Exp $
  */
 
-#include "/openpcidata.h"
+#include "openpcidata.h"
 #include "PrometheusWrapper.h"
 
 /* Read Config */

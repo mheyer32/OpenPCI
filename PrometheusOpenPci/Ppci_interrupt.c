@@ -2,7 +2,7 @@
  * $Id: Ppci_interrupt.c,v 1.1.1.1 2002/05/09 13:36:42 titan Exp $
  */
 
-#include "/openpcidata.h"
+#include "openpcidata.h"
 #include "PrometheusWrapper.h"
 
 /*

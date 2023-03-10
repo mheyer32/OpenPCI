@@ -11,7 +11,7 @@
 #include "pcibus.h"
 #include "pci.h"
 
-#ifdef __SASC
+#if defined(__SASC) || defined(_AMIGAOS3_)
 #define __PrometheusWrapper__
 #else
 #undef __PrometheusWrapper__

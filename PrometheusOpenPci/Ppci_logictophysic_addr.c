@@ -2,7 +2,7 @@
  * $Id: Ppci_logictophysic_addr.c,v 1.1.1.1 2005/03/19 12:11:00 titan Exp $
  */
 
-#include "/openpcidata.h"
+#include "openpcidata.h"
 #include "PrometheusWrapper.h"
 
 /* Convert Logical to Physical PCI Memory Address */

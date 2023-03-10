@@ -36,7 +36,7 @@
 #include <proto/openpci.h>
 #include <libraries/openpci.h>
 
-#include "PCIBusInfo.h"
+#include "pcibusinfo.h"
 
 #ifdef LATTICE
 //int CXBRK(void) { return(0); }  /* Disable Lattice CTRL/C handling */

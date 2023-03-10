@@ -2,7 +2,7 @@
  * $Id: Ppci_allocfree_dma.c,v 1.1.1.1 2002/05/09 13:36:45 titan Exp $
  */
 
-#include "/openpcidata.h"
+#include "openpcidata.h"
 #include "PrometheusWrapper.h"
 
 /* Alloc and Free DMA memory for PCI card */

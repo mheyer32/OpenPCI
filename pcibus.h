@@ -27,7 +27,7 @@
 #endif
 
 #ifdef __GNUC__
-extern struct Library   *ExpansionBase;
+extern struct ExpansionBase   *ExpansionBase;
 #endif
 
 extern unsigned short pci_bus(void);

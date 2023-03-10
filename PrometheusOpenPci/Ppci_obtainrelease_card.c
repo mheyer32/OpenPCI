@@ -5,7 +5,7 @@
 #ifdef __GNUC__
 #include "../openpcidata.h"
 #else
-#include "/openpcidata.h"
+#include "openpcidata.h"
 #endif
 
 #include "PrometheusWrapper.h"
