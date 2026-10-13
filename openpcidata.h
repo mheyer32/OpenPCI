@@ -44,8 +44,8 @@
 
 #include "compiler.h"
 
-#include "debug.h"
 #include "pcibus.h"
+#include "debug.h"
 #include "pci.h"
 
 #define MAX_PCI_CARD_NAME 100

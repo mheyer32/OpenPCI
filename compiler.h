@@ -24,6 +24,8 @@
 #define REG(reg,arg) arg __asm(#reg)
 #define LIB
 #define ASM
+#undef __aligned
+#define __aligned
 #endif
 #else
 #define REG(reg,arg) register __ ## reg arg
