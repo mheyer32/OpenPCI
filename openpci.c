@@ -189,7 +189,7 @@ struct OpenPciLib * __saveds ASM LIB_Init(REG(d0, struct OpenPciLib *LibBase),
 		}	
 #endif
 
-		if(OpenPCIBus(OpenPciBase->bus)==NULL)
+		if(!OpenPCIBus(OpenPciBase->bus))
 		{
 			LibCleanup(LibBase);
 			return NULL;
@@ -378,5 +378,5 @@ void __regargs _CXBRK(void)     { }  /* CTRL-C aborted when doing I/O */
 int __nocommandline = 1;
 int __initlibraries = 0;
 long _WBenchMsg = 0;
-void exit(int status) {};
+void exit(int status) { (void)status; for(;;); }
 #endif

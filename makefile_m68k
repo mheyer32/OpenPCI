@@ -1,6 +1,6 @@
-# $
-
-#SHELL =  /bin/sh
+#
+# OpenPci.library gcc makefile
+#
 
 ISOPATH ?= dist
 

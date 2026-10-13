@@ -214,8 +214,8 @@ void PROMETHEUSpcidev(void)
 
               		}else
               		{
-              			OpenPciBase->pcidev->base_address[j]=NULL;
-              			OpenPciBase->pcidev->base_size[j]=NULL;
+              			OpenPciBase->pcidev->base_address[j]=0;
+              			OpenPciBase->pcidev->base_size[j]=0;
               		}
 			       }
                       	
@@ -232,8 +232,8 @@ void PROMETHEUSpcidev(void)
             		OpenPciBase->pcidev->rom_size=~(memsize&PCI_ROM_ADDRESS_MASK)&PCI_ROM_ADDRESS_MASK;
             	}else
             	{
-            		OpenPciBase->pcidev->rom_address=NULL;
-            		OpenPciBase->pcidev->rom_size=NULL;
+            		OpenPciBase->pcidev->rom_address=0;
+            		OpenPciBase->pcidev->rom_size=0;
             	}
             }  		
 		 }
